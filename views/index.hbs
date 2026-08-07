@@ -1,0 +1,34 @@
+<div class="jt-hero text-center">
+  <h1>Keep every job application in one place</h1>
+  <p class="lead mb-4">
+    JobTrackr helps you log applications, track their status, and follow up on
+    time — no more losing track in a messy spreadsheet.
+  </p>
+  {{#if currentUser}}
+    <a href="/applications" class="btn btn-jt btn-lg">Go to My Applications</a>
+  {{else}}
+    <a href="/users/register" class="btn btn-jt btn-lg me-2">Get Started</a>
+    <a href="/applications/public" class="btn btn-outline-light btn-lg">View Public Listings</a>
+  {{/if}}
+</div>
+
+<div class="row text-center g-4">
+  <div class="col-md-4">
+    <div class="card p-4 h-100">
+      <h5>Track Status</h5>
+      <p class="text-muted mb-0">See at a glance which applications are pending, in interview, or closed.</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-4 h-100">
+      <h5>Search &amp; Filter</h5>
+      <p class="text-muted mb-0">Quickly find an application by company name or filter by status.</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-4 h-100">
+      <h5>Private &amp; Secure</h5>
+      <p class="text-muted mb-0">Your applications are only visible to you once you log in.</p>
+    </div>
+  </div>
+</div>

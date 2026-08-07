@@ -1,0 +1,31 @@
+<div class="card p-4" style="max-width: 600px; margin: 0 auto;">
+  <h2 class="mb-3">Edit Application</h2>
+  <form action="/applications/{{application._id}}?_method=PUT" method="POST">
+    <div class="mb-3">
+      <label class="form-label">Company</label>
+      <input type="text" name="company" class="form-control" value="{{application.company}}" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Job Title</label>
+      <input type="text" name="jobTitle" class="form-control" value="{{application.jobTitle}}" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Application Date</label>
+      <input type="date" name="applicationDate" class="form-control" value="{{formatDate application.applicationDate}}" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      <select name="status" class="form-select">
+        <option value="Applied" {{#if (eq application.status "Applied")}}selected{{/if}}>Applied</option>
+        <option value="Interview" {{#if (eq application.status "Interview")}}selected{{/if}}>Interview</option>
+        <option value="Offer" {{#if (eq application.status "Offer")}}selected{{/if}}>Offer</option>
+        <option value="Rejected" {{#if (eq application.status "Rejected")}}selected{{/if}}>Rejected</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Notes</label>
+      <textarea name="notes" class="form-control" rows="3">{{application.notes}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-jt w-100">Update Application</button>
+  </form>
+</div>

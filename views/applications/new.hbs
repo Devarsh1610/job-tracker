@@ -1,0 +1,31 @@
+<div class="card p-4" style="max-width: 600px; margin: 0 auto;">
+  <h2 class="mb-3">Add Application</h2>
+  <form action="/applications" method="POST">
+    <div class="mb-3">
+      <label class="form-label">Company</label>
+      <input type="text" name="company" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Job Title</label>
+      <input type="text" name="jobTitle" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Application Date</label>
+      <input type="date" name="applicationDate" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      <select name="status" class="form-select">
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Notes</label>
+      <textarea name="notes" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-jt w-100">Save Application</button>
+  </form>
+</div>

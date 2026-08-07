@@ -1,0 +1,72 @@
+/* Custom styling on top of Bootstrap so the app doesn't look like a default template */
+
+:root {
+  --jt-navy: #1b2a4a;
+  --jt-navy-dark: #101a30;
+  --jt-accent: #e8871e;
+  --jt-bg: #f6f7fb;
+}
+
+body {
+  background-color: var(--jt-bg);
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #24304a;
+}
+
+.jt-navbar {
+  background-color: var(--jt-navy);
+}
+
+.jt-navbar .navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+.jt-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e3e6ee;
+}
+
+.jt-hero {
+  background: linear-gradient(135deg, var(--jt-navy) 0%, var(--jt-navy-dark) 100%);
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 3.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.jt-hero h1 {
+  font-weight: 700;
+}
+
+.btn-jt {
+  background-color: var(--jt-accent);
+  border-color: var(--jt-accent);
+  color: #fff;
+}
+
+.btn-jt:hover {
+  background-color: #c96f13;
+  border-color: #c96f13;
+  color: #fff;
+}
+
+.card {
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 10px rgba(20, 30, 60, 0.08);
+}
+
+.badge-status-Applied { background-color: #6c8ff8; }
+.badge-status-Interview { background-color: var(--jt-accent); }
+.badge-status-Offer { background-color: #3fb27f; }
+.badge-status-Rejected { background-color: #d9534f; }
+
+.table thead {
+  background-color: var(--jt-navy);
+  color: #fff;
+}
+
+.auth-card {
+  max-width: 420px;
+  margin: 2rem auto;
+}

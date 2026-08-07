@@ -1,0 +1,12 @@
+<div class="card p-4 text-center" style="max-width: 500px; margin: 0 auto;">
+  <h2 class="mb-3">Delete Application?</h2>
+  <p>
+    Are you sure you want to delete the application for
+    <strong>{{application.jobTitle}}</strong> at <strong>{{application.company}}</strong>?
+    This cannot be undone.
+  </p>
+  <form action="/applications/{{application._id}}?_method=DELETE" method="POST">
+    <button type="submit" class="btn btn-danger me-2">Yes, Delete</button>
+    <a href="/applications" class="btn btn-outline-secondary">Cancel</a>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="card auth-card p-4">
+  <h2 class="mb-3 text-center">Login</h2>
+
+  <form action="/users/login" method="POST">
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" name="username" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-jt w-100">Login</button>
+  </form>
+
+  <div class="text-center my-3 text-muted">or</div>
+
+  <a href="/users/auth/github" class="btn btn-dark w-100">Login with GitHub</a>
+
+  <p class="text-center mt-3 mb-0">
+    Don't have an account? <a href="/users/register">Register</a>
+  </p>
+</div>

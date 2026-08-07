@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+  <h1 class="mb-0">My Applications</h1>
+  <a href="/applications/new" class="btn btn-jt">+ Add Application</a>
+</div>
+
+<form action="/applications" method="GET" class="row g-2 mb-4">
+  <div class="col-sm-5">
+    <input
+      type="text"
+      name="q"
+      class="form-control"
+      placeholder="Fuzzy search by company, title, or notes..."
+      value="{{q}}"
+    />
+  </div>
+  <div class="col-sm-4">
+    <select name="status" class="form-select">
+      <option value="">All statuses</option>
+      <option value="Applied" {{#if (eq status "Applied")}}selected{{/if}}>Applied</option>
+      <option value="Interview" {{#if (eq status "Interview")}}selected{{/if}}>Interview</option>
+      <option value="Offer" {{#if (eq status "Offer")}}selected{{/if}}>Offer</option>
+      <option value="Rejected" {{#if (eq status "Rejected")}}selected{{/if}}>Rejected</option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+    <button type="submit" class="btn btn-outline-secondary w-100">Search / Filter</button>
+  </div>
+</form>
+
+<div class="table-responsive">
+  <table class="table table-hover bg-white">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Job Title</th>
+        <th>Date Applied</th>
+        <th>Status</th>
+        <th>Notes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each applications}}
+      <tr>
+        <td>{{this.company}}</td>
+        <td>{{this.jobTitle}}</td>
+        <td>{{formatDate this.applicationDate}}</td>
+        <td><span class="badge badge-status-{{this.status}}">{{this.status}}</span></td>
+        <td>{{this.notes}}</td>
+        <td class="text-nowrap">
+          <a href="/applications/{{this._id}}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+          <a href="/applications/{{this._id}}/delete" class="btn btn-sm btn-outline-danger">Delete</a>
+        </td>
+      </tr>
+      {{else}}
+      <tr><td colspan="6" class="text-center text-muted">No applications match your search yet.</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
